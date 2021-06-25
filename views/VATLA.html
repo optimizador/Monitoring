@@ -1,0 +1,176 @@
+
+<p>Vamos a dimensionar IBM Cloud Activity Tracker with LogDNA-v4</p>
+<p>
+<form action="/" method="get">
+<button type="submit"> <-- Regresar </button>
+</form>
+</p>
+<p style="font-style: italic;">
+NOTAS:<br>
+*Los precios lista que se presentarán son calculados y pueden variar respecto a los presentados en IBM Cloud en +-1%<br>
+**Para procesos de special bid es requerido obtener los precios lista desde cloud.ibm.com<br>
+</p>
+<form id="VAT" name="" method="post">
+<table style="width:100%" align="left">
+  <tr>
+    <th bgcolor="#00008B" style="color: white" >Parámetros Clúster</th>
+  </tr>
+  <tr>
+  <table style="width:50%" align="left">
+  <tr>
+  <th bgcolor="#00008B" style="color: white" >Cloud Activity Tracker</th>
+</tr>
+  </tr>
+  <tr>
+    <td>
+        <!-- tabla parametros del clúster -->
+        <table style="width:100%" bgcolor="#00008B" align="left">
+          <tr>
+            <th bgcolor="#00008B" style="color: white;">Parámetro</th>
+            <th bgcolor="#00008B" style="color: white;">Valor</th>
+          </tr>
+           <tr>
+            <td style="color: white;">GB</td>
+            <td>
+            <input type="number" name="" id="v1" autofocus placeholder="GB">
+            <tr>
+            <td style="color: white;">Región</td>
+            <td>
+              <select name="region" id="region">
+                <option value="mexico">México</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="color: white;">Precios del País</td>
+            <td>
+              <select name="preciopais" id="preciopais">
+                <option value="mexico">México</option>
+              </select>
+            </td>
+            <td>
+            <button type="button" onclick="CAT();">Quiero mi cotización</button>
+            </tb>  
+            </tr>
+		<tr>
+    
+    <th bgcolor="#00008B" style="color: white; width:50%" >Busqueda de sucesos por periodo</th>
+  </tr>
+  </table>
+ <script>
+function CAT(){
+
+    var GBS = parseInt(document.getElementById('v1').value);
+       document.getElementById('FCot7D').innerHTML= Math.round((GBS*1.72) * 100) / 100;
+       document.getElementById('FCot14D').innerHTML= Math.round((GBS*2.30) * 100) / 100;
+       document.getElementById('FCot30D').innerHTML= Math.round((GBS*3.25) * 100) / 100;
+       document.getElementById('FCot30DH').innerHTML= Math.round((GBS*4.60) * 100) / 100;
+    }
+</script>
+
+ 
+	</form>
+
+ <table  style="width:100%" align="left">
+    <thead>
+      <tr>
+        <th bgcolor="#00008B" style="color: white;">7 Días</th>
+        <th bgcolor="#00008B" style="color: white;">14 Días</th>
+        <th bgcolor="#00008B" style="color: white;">30 Días</th>
+        <th bgcolor="#00008B" style="color: white;">30 Días HIPAA</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td><label id="FCot7D"></id></td>
+        <td><label id="FCot14D"></td>
+        <td><label id="FCot30D"></td>
+        <td><label id="FCot30DH"></td>
+        </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+    <form id="VAT" name="" method="post">
+	<tr>
+  <table style="width:50%" align="center">
+  <tr>
+  <th bgcolor="#00008B" style="color: white" >Cloud Activity Tracker</th>
+</tr>
+  </tr>
+  <tr>
+    <td>
+        <!-- tabla parametros del clúster -->
+        <table style="width:100%" bgcolor="#00008B" align="center">
+          <tr>
+            <th bgcolor="#00008B" style="color: white;">Parámetro</th>
+            <th bgcolor="#00008B" style="color: white;">Valor</th>
+          </tr>
+           <tr>
+            <td style="color: white;">GB</td>
+            <td>
+            <input type="number" name="" id="v2" autofocus placeholder="GB">
+            <tr>
+            <td style="color: white;">Región</td>
+            <td>
+              <select name="region" id="region">
+                <option value="mexico">México</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="color: white;">Precios del País</td>
+            <td>
+              <select name="preciopais" id="preciopais">
+                <option value="mexico">México</option>
+              </select>
+            </td>
+            <td>
+            <button type="button" onclick="CLG();">Quiero mi cotización</button>
+            </tb>  
+            </tr>
+		<tr>
+    
+    <th bgcolor="#00008B" style="color: white; width:50%" >Busqueda de sucesos por periodo</th>
+  </tr>
+  </table>
+  
+<script>
+function CLG(){
+
+      var GBS1 = parseInt(document.getElementById('v2').value);
+      document.getElementById('FCot17D').innerHTML= Math.round((GBS1*1.72) * 100) / 100;
+      document.getElementById('FCot114D').innerHTML= Math.round((GBS1*2.30) * 100) / 100;
+      document.getElementById('FCot130D').innerHTML= Math.round((GBS1*3.25) * 100) / 100;
+      document.getElementById('FCot130DH').innerHTML= Math.round((GBS1*4.60) * 100) / 100;
+      }
+</script>
+
+</form>
+<table  style="width:100%" align="left">
+    <thead>
+      <tr>
+        <th bgcolor="#00008B" style="color: white;">7 Días</th>
+        <th bgcolor="#00008B" style="color: white;">14 Días</th>
+        <th bgcolor="#00008B" style="color: white;">30 Días</th>
+        <th bgcolor="#00008B" style="color: white;">30 Días HIPAA</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td><label id="FCot17D"></id></td>
+        <td><label id="FCot114D"></td>
+        <td><label id="FCot130D"></td>
+        <td><label id="FCot130DH"></td>
+        </tr>
+</body>
+</html>
