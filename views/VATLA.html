@@ -1,7 +1,6 @@
-
 <p>Vamos a dimensionar IBM Cloud Activity Tracker with LogDNA-v4</p>
 <p>
-<form action="/" method="get">
+<form action="https://ui.9sxuen7c9q9.us-south.codeengine.appdomain.cloud/" method="get">
 <button type="submit"> <-- Regresar </button>
 </form>
 </p>
@@ -55,13 +54,18 @@ NOTAS:<br>
             </tr>
 		<tr>
     
-    <th bgcolor="#00008B" style="color: white; width:50%" >Busqueda de sucesos por periodo</th>
+    <th bgcolor="#00008B" style="color: white; width:50%" >Busqueda de sucesos por periodo ($USD)</th>
   </tr>
   </table>
  <script>
 function CAT(){
 
     var GBS = parseInt(document.getElementById('v1').value);
+     if (isNaN(GBS)) {
+    GBS=0;
+  } else {
+    GBS=GBS; 
+  }
        document.getElementById('FCot7D').innerHTML= Math.round((GBS*1.72) * 100) / 100;
        document.getElementById('FCot14D').innerHTML= Math.round((GBS*2.30) * 100) / 100;
        document.getElementById('FCot30D').innerHTML= Math.round((GBS*3.25) * 100) / 100;
@@ -103,7 +107,7 @@ function CAT(){
 	<tr>
   <table style="width:50%" align="center">
   <tr>
-  <th bgcolor="#00008B" style="color: white" >Cloud Activity Tracker</th>
+  <th bgcolor="#00008B" style="color: white" >Log Analysis with LogDNA</th>
 </tr>
   </tr>
   <tr>
@@ -140,7 +144,7 @@ function CAT(){
             </tr>
 		<tr>
     
-    <th bgcolor="#00008B" style="color: white; width:50%" >Busqueda de sucesos por periodo</th>
+    <th bgcolor="#00008B" style="color: white; width:50%" >Busqueda de sucesos por periodo ($USD)</th>
   </tr>
   </table>
   
@@ -148,6 +152,11 @@ function CAT(){
 function CLG(){
 
       var GBS1 = parseInt(document.getElementById('v2').value);
+       if (isNaN(GBS1)) {
+    GBS1=0;
+  } else {
+    GBS1=GBS1; 
+  }
       document.getElementById('FCot17D').innerHTML= Math.round((GBS1*1.72) * 100) / 100;
       document.getElementById('FCot114D').innerHTML= Math.round((GBS1*2.30) * 100) / 100;
       document.getElementById('FCot130D').innerHTML= Math.round((GBS1*3.25) * 100) / 100;

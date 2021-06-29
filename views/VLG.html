@@ -1,4 +1,4 @@
-<form action="/" method="get">
+<form action="https://ui.9sxuen7c9q9.us-south.codeengine.appdomain.cloud/" method="get">
     <button type="submit"> <-- Regresar </button>
     </form>
     </p>
@@ -50,7 +50,9 @@
                 <td style="color: white;" align="center">Región</td>
                 <td>
                   <select name="region" id="region">
-                    <option value="mexico" align="center">México</option>
+                   <option value="mexico">US-South</option>
+                    <option value="mexico">Us-East</option>
+                    
                   </select>
                 </td>
               </tr>
@@ -59,7 +61,7 @@
                 <td style="color: white;" align="center">Precios del País</td>
                 <td>
                   <select name="preciopais" id="preciopais">
-                    <option value="mexico">México</option>
+                    <option value="mexico" align="center">México</option>
                   </select>
                 </td>
                 <td>
@@ -91,32 +93,7 @@
             
             </tr>
     </table>
-        <tr>
-        <th bgcolor="#00008B" style="color: white; width:100%" align="left" >Precio unitario por horas al mes (720hrs) $USD</th>
-      </tr>
-      </table>
-      <table  style="width:100%" align="left">
-        <thead>
-          <tr>
-            <th bgcolor="#00008B" style="color: white;">Node hour</th>
-            <th bgcolor="#00008B" style="color: white;">Lite node hour</th>
-            <th bgcolor="#00008B" style="color: white;">Container hour</th>
-            <th bgcolor="#00008B" style="color: white;">Time series hour</th>
-            <th bgcolor="#00008B" style="color: white;">API Call</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td><label id="FCotn"></id></td>
-            <td><label id="FCotnl"></td>
-            <td><label id="FCotch"></td>
-            <td><label id="FCotst"></td>
-            <td><label id="FCotapi"></td>
-            
-          
-            
-            </tr>
-    </table>
+
     <table style="width:100%" align="left">
         <th bgcolor="#00008B" style="color: white" >Coste estimado por mes ($USD)</th>
        <tbody>
@@ -133,6 +110,31 @@
          var ch = parseInt(document.getElementById('CH').value);
          var st = parseInt(document.getElementById('ST').value);
          var api = parseInt(document.getElementById('API').value);  
+         if (isNaN(n)) {
+    n=0;
+  } else {
+    n=n; 
+  }
+   if (isNaN(nl)) {
+    nl=0;
+  } else {
+    nl=nl; 
+  }
+   if (isNaN(ch)) {
+    ch=0;
+  } else {
+    ch=ch; 
+  }
+   if (isNaN(st)) {
+    st=0;
+  } else {
+    st=st; 
+  }
+   if (isNaN(api)) {
+    api=0;
+  } else {
+    api=api; 
+  }
          var hn= n*720;
          var hnl= nl*720;
          var hch= ch*720;
@@ -155,12 +157,8 @@
          var cst=((tn+tnl)*tst*ptst);
          var tapi= (api*0.00001);
          var total= tn+tnl+tch+cst+tapi;
-         document.getElementById('total').innerHTML=(total);
-         document.getElementById('FCotn').innerHTML=Math.round(tn)* 100 / 100;
-         document.getElementById('FCotnl').innerHTML=Math.round(tnl)* 100 / 100;
-         document.getElementById('FCotch').innerHTML=Math.round(tch)* 100 / 100;
-         document.getElementById('FCotst').innerHTML=Math.round(cst)* 100 / 100;
-         document.getElementById('FCotapi').innerHTML=Math.round(tapi)* 100 / 100;
+         document.getElementById('total').innerHTML=Math.round(total)* 100 / 100;
+
          document.getElementById('labelhn').innerHTML=Math.round(hn)* 100 / 100;
          document.getElementById('labelhnl').innerHTML=Math.round(hnl)* 100 / 100;
          document.getElementById('labelhch').innerHTML=Math.round(hch)* 100 / 100;
