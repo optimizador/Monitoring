@@ -4,13 +4,16 @@ const fetch = require('node-fetch');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var request = require('request');
 const app = express()
-const port = 4000
+const port = 31184
 const morgan = require('morgan');
 const { json } = require('body-parser');
 var publicPath = path.resolve(__dirname, 'public');
 app.use(express.static(publicPath));
 
-
+app.get('/', (request, response) => {
+    response.sendFile(path.resolve(__dirname, './index.html'))
+    
+})
 app.get('/VATLA', (request, response) => {
     response.sendFile(path.resolve(__dirname, './VATLA.html'))
     
