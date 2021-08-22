@@ -10,257 +10,253 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Optimizador dimensionamiento</title>
-    <style>
-      .currSign:before {
-          content: '$';
-      }
-    </style>
+  <title>Optimizador dimensionamiento</title>
+  <style>
+    .currSign:before {
+      content: '$';
+    }
+  </style>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 
-    <!-- Toastr style -->
-    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+  <!-- Toastr style -->
+  <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
-    <!-- Gritter -->
-    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+  <!-- Gritter -->
+  <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
-    
-        <div class="row wrapper wrapper-content animated fadeInRight">
-            <div class="row wrapper border-bottom white-bg page-heading">
-                    <div class="col-lg-12 text-center">
-                        <h2>Dimensionamiento Orquestadores de Contenedores</h2>
-                        
-                    </div>
-                    <div class="col-lg-2">
-    
-                    </div>
-                </div>
+  
+      <div class="row wrapper wrapper-content animated fadeInRight">
+        <div class="row wrapper border-bottom white-bg page-heading">
+          <div class="col-lg-12 text-center">
+            <h2>Dimensionamiento Orquestadores de Contenedores</h2>
+
+          </div>
+          <div class="col-lg-2">
+
+          </div>
+        </div>
         <br>
         <div class="ibox float-e-margins">
-        <div class="ibox-title">
-          <h5> Parámetros Clúster IBM Cloud Monitoring with Sysdig</h5>
-        </div>
-        <div class="ibox-content">
-          <h5>NOTAS:*Los precios lista que se presentarán son calculados y pueden variar respecto a los presentados en IBM Cloud en +-20%</h5>
-    <form id="VAT" name="" method="post">
-      
-      <table class="table table-stripped">
+          <div class="ibox-title">
+            <h5> Parámetros Clúster IBM Cloud Monitoring with Sysdig</h5>
+          </div>
+          <div class="ibox-content">
+            <h5>NOTAS:*Los precios lista que se presentarán son calculados y pueden variar respecto a los presentados en
+              IBM Cloud en +-20%</h5>
+
+            <form method="POST" action="/CloudMonitoring">
+              <table class="table table-stripped">
+                <thead>
+                  <tr>
+                    <th>Parámetro</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Node</td>
+                    <td>
+                      <label><input type="number" id="node" name="node" step="any"  autofocus
+                          placeholder="Node">
+                      </label>
+                    </td>
+                  <tr>
+                    <td>Lite Node</td>
+                    <td>
+                      <label><input type="number" id="litenode" name="litenode" step="any"  autofocus
+                          placeholder="Lite node">
+                      </label>
+                    </td>
+                  <tr>
+                    <td>Container</td>
+                    <td>
+                      <label><input type="number" id="container" name="container" step="any"  autofocus
+                          placeholder="Container">
+                      </label>
+                    </td>
+                  <tr>
+                    <td>API Call</td>
+                    <td>
+                      <label><input type="number" id="apicall" name="apicall" step="any"  autofocus
+                          placeholder="API's">
+                      </label>
+                    </td>
+                  <tr>
+                    <td>Time series hour</td>
+                    <td>
+                      <label><input type="number" id="timeserieshour" name="timeserieshour" step="any"  autofocus
+                          placeholder="Time series">
+                      </label>
+                    </td>
+                  <tr>
+                    <td>Region</td>
+                    <td>
+                      <select name="region" id="region" >
+                        <option value="US-South">US-South</option>
+                        <option value="US-East">Us-East</option>
+
+                      </select>
+                    </td>
+                  <tr>
+                    <td>Precio del Pais</td>
+                    <td>
+                      <select name="preciopais" id="preciopais" >
+                        <option value="mexico">México</option>
+
+
+                      </select>
+                    </td>
+                    <td>
+                      <button type="button" onclick="Monitoring()" action align="right" class="btn btn-outline btn-primary">Quiero mi
+                        cotización</button>
+                      </tb>
+                  </tr>
+                <tbody>
+
+          </div>
+          <div class="ibox-content">
+            <table class="table table-stripped">
               <thead>
                 <tr>
-                  <th>Parámetro</th>
-                  <th>Valor</th>
+                  <th>Node hour</th>
+                  <th>Lite node hour</th>
+                  <th>Container hour</th>
+                  <th>Time series hour</th>
+                  <th>Coste estimado por mes ($USD)</th>
                 </tr>
               </thead>
-               <tbody>
-                <tr>
-                  <td>Node</td>
-                  <td>
-                    <label><input type="number" id="N" name="" step="any" required="" autofocus placeholder="Node">
-                  </label></td>
-                  <tr>
-                  <td>Lite Node</td>
-                  <td>
-                    <label><input type="number" id="NL" name="" step="any" required="" autofocus placeholder="Lite node">
-                  </label></td>
-        <tr>
-                  <td>Container</td>
-                  <td>
-                    <label><input type="number" id="CH" name="" step="any" required="" autofocus placeholder="Container">
-                  </label></td>
-        <tr>
-                  <td>API Call</td>
-                  <td>
-                    <label><input type="number" id="API" name="" step="any" required="" autofocus placeholder="API's">
-                  </label></td>
-        <tr>
-                  <td>Time series hour</td>
-                  <td>
-                    <label><input type="number" id="ST" name="" step="any" required="" autofocus placeholder="Time series">
-                  </label></td>
-        <tr>
-        <td>Region</td>
-                  <td>
-                    <select name="" id="region" required="">
-                      <option value="mexico">US-South</option>
-                    <option value="mexico">Us-East</option>
-                    
-                    </select>
-                  </td>
-                <tr>
-        <td>Precio del Pais</td>
-                  <td>
-                    <select name="preciopais" id="preciopais" required="">
-                      <option value="mexico">México</option>
-            
-                    
-                    </select>
-                  </td>
-                <td>
-                <button type="button" onclick="CLO();" align="right" class="btn btn-outline btn-primary">Quiero mi cotización</button>
-                </tb>  
-                </tr>
               <tbody>
-           
-        </div>
-        <div class="ibox-content">
-          <table class="table table-stripped">
-            <thead>
-              <tr>
-            <th>Node hour</th>
-            <th>Lite node hour</th>
-            <th>Container hour</th>
-            <th>Time series hour</th>
-             <th>Coste estimado por mes ($USD)</th>
-              </tr>
-            </thead>
-            <tbody>
-     <div class="ibox float-e-margins">
-        <div class="ibox-title">
-          <h5>Parametros por horas al mes (720hrs)</h5>
-        </div>
-        <tbody>
-            <tr>
-            <td><label id="labelhn"></id></td>
-            <td><label id="labelhnl"></td>
-            <td><label id="labelhch"></td>
-            <td><label id="labelhst"></td>
-            <td><label id="total"></td>
-            
-          
-            
-            </tr>
-    </table>
-        </form>
-    <script>
-    function CLO(){
-
-         var n = parseInt(document.getElementById('N').value);
-         var nl = parseInt(document.getElementById('NL').value);
-         var ch = parseInt(document.getElementById('CH').value);
-         var st = parseInt(document.getElementById('ST').value);
-         var api = parseInt(document.getElementById('API').value);  
-         if (isNaN(n)) {
-    n=0;
-  } else {
-    n=n; 
-  }
-   if (isNaN(nl)) {
-    nl=0;
-  } else {
-    nl=nl; 
-  }
-   if (isNaN(ch)) {
-    ch=0;
-  } else {
-    ch=ch; 
-  }
-   if (isNaN(st)) {
-    st=0;
-  } else {
-    st=st; 
-  }
-   if (isNaN(api)) {
-    api=0;
-  } else {
-    api=api; 
-  }
-         var hn= n*720;
-         var hnl= nl*720;
-         var hch= ch*720;
-         var tst= st*720;
-         if (tst<=1000)
-         var ptst=0.000111;
-         else 
-         if (tst>1000 && tst<=10000)
-         ptst=0.000069;
-         else 
-         if (tst>10000 && tst<=100000)
-         ptst=0.000042;
-         else
-         if (tst=1)
-         ptst=0.000028;
-     
-         var tn=(hn*0.048);
-         var tnl=(hnl*0.013);
-         var tch=(hch*0.000694);
-         var cst=((tn+tnl)*tst*ptst);
-         var tapi= (api*0.00001);
-         var total= tn+tnl+tch+cst+tapi;
-         document.getElementById('total').innerHTML=Math.round(total)* 100 / 100 + "$USD";
-
-         document.getElementById('labelhn').innerHTML=Math.round(hn)* 100 / 100;
-         document.getElementById('labelhnl').innerHTML=Math.round(hnl)* 100 / 100;
-         document.getElementById('labelhch').innerHTML=Math.round(hch)* 100 / 100;
-         document.getElementById('labelhst').innerHTML=Math.round(tst)* 100 / 100;
-     
-         
-         }
-    </script>
-    </body>
-    </html>
-  <!-- Javascript code to format the
-           number as per the locale -->
-      <script>
-          let x = document.querySelectorAll(".myDIV");
-          for (let i = 0, len = x.length; i < len; i++) {
-              let num = Number(x[i].innerHTML)
-                        .toLocaleString('en');
-              x[i].innerHTML = num;
-              x[i].classList.add("currSign");
-          }
-      </script>
-    <!-- Mainly scripts -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-    <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
-
-    <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-    <script src="js/demo/peity-demo.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
-
-    <!-- jQuery UI -->
-    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
-
-    <!-- GITTER -->
-    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
-
-    <!-- Sparkline -->
-    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Sparkline demo data  -->
-    <script src="js/demo/sparkline-demo.js"></script>
-
-    <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
-
-    <!-- Toastr -->
-    <script src="js/plugins/toastr/toastr.min.js"></script>
+                <div class="ibox float-e-margins">
+                  <div class="ibox-title">
+                    <h5>Parametros por horas al mes (720hrs)</h5>
+                  </div>
+              <tbody>
+                <tr>
+                  <td><label id="lnodehour"></id>
+                  </td>
+                  <td><label id="lnodelitehour"></td>
+                  <td><label id="lcontainerhour"></td>
+                  <td><label id="ltimeserieshour"></td>
+                  <td><label id="total"></td>
 
 
-   
+
+                </tr>
+            </table>
+            </form>
+            <script>
+             function Monitoring() {
+              
+                      const Http = new XMLHttpRequest();
+                      const url = '/CloudMonitoring/?node='+document.getElementById("node").value+'&litenode='+document.getElementById("litenode").value+'&container='+document.getElementById("container").value+'&timeserieshour='+document.getElementById("timeserieshour").value+'&apicall='+document.getElementById("apicall").value+'&region='+document.getElementById("region").value+'&preciopais='+document.getElementById("preciopais").value;
+                      Http.open("GET", url);
+                      Http.send();
+                      Http.onreadystatechange = (e) => {
+                       var datos= Http.responseText;
+                       
+                       var datosJson= JSON.stringify(Http.responseText); 
+                       var parse = JSON.parse(datosJson);
+                       var filtro = datos.replace(/"{\\"node\\":\\"[0-9]+\\",\\|"litenode\\":\\"[0-9]+\\",\\|"Container\\":\\"[0-9]+\\",\\|"timeserieshour\\":\\"[0-9]+\\",\\|"apicall\\":\\"[0-9]+\\",\\|"region\\":\\"US-South\\",\\|"region\\":\\"US-East\\",\\|"pais\\":\\"mexico\\",\\/g,""); //|"total\\"|"nodehour\\":\\"[0-9]+\\",\\|"nodelitehour\\":\\"[0-9]+\\",\\|"containerhour\\":\\"[0-9]+\\",\\|"timehour\\":\\"[0-9]+\\"}"\\/g, "");
+                       var filtrototal1=filtro.replace(/"total\\":\\\"/g,"")
+                       var filtrototal2=filtrototal1.replace(/"nodehour\\":\\"[0-9]+\\",\\|"nodelitehour\\":\\"[0-9]+\\",\\|"containerhour\\":\\"[0-9]+\\",\\|"timehour\\":\\"[0-9]+\\"}/g,"")
+                       var total=filtrototal2.replace(/\"|,|\\/g,"");
+                       var filtropunto=filtro.replace(/\./g,"");
+                       var filtronodehour1=filtropunto.replace(/"total\\":\\"[0-9]+\\",\\|"nodelitehour\\":\\"[0-9]+\\",\\|"containerhour\\":\\"[0-9]+\\",\\|"timehour\\":\\"[0-9]+\\"}/g,"")
+                       var filtronodehour2=filtronodehour1.replace(/"nodehour\\":\\\"/g,"")
+                       var nodehour=filtronodehour2.replace(/\"|,|\\/g,"");
+                       var filtronodelitehour1=filtropunto.replace(/"total\\":\\"[0-9]+\\",\\|"nodehour\\":\\"[0-9]+\\",\\|"containerhour\\":\\"[0-9]+\\",\\|"timehour\\":\\"[0-9]+\\"}/g,"")
+                       var filtronodelitehour2=filtronodelitehour1.replace(/"nodelitehour\\":\\\"/g,"")
+                       var nodelitehour=filtronodelitehour2.replace(/\"|,|\\/g,"");                                                                                                                                                                                                                                         //"total\\":\\"[0-9]\\",\\/g, '');
+                       var filtrocontainerhour1=filtropunto.replace(/"total\\":\\"[0-9]+\\",\\|"nodehour\\":\\"[0-9]+\\",\\|"nodelitehour\\":\\"[0-9]+\\",\\|"timehour\\":\\"[0-9]+\\"}/g,"")
+                       var filtrocontainerhour2=filtrocontainerhour1.replace(/"containerhour\\":\\\"/g,"")
+                       var containerhour=filtrocontainerhour2.replace(/\"|,|\\/g,"");
+                       var filtrotimehour1=filtropunto.replace(/"total\\":\\"[0-9]+\\",\\|"nodehour\\":\\"[0-9]+\\",\\|"nodelitehour\\":\\"[0-9]+\\",\\|"containerhour\\":\\"[0-9]+\\"/g,"")
+                       var filtrotimehour2=filtrotimehour1.replace(/"timehour\\":\\\"/g,"")
+                       var filtrotimehour3=filtrotimehour2.replace(/}/g,"")
+                       var timehour=filtrotimehour3.replace(/\"|,|\\/g,"");
+
+
+                       console.log(timehour);
+                       document.getElementById("lnodehour").innerHTML=nodehour;
+                       document.getElementById("lnodelitehour").innerHTML=nodelitehour;
+                       document.getElementById("lcontainerhour").innerHTML=nodelitehour;
+                       document.getElementById("ltimeserieshour").innerHTML=timehour;
+                       document.getElementById("total").innerHTML=total + ' $USD';
+
+                       
+                       
+                      
+                     
+                      }
+                    }
+            </script>
 </body>
+
+</html>
+<!-- Javascript code to format the
+           number as per the locale -->
+<script>
+  let x = document.querySelectorAll(".myDIV");
+  for (let i = 0, len = x.length; i < len; i++) {
+    let num = Number(x[i].innerHTML)
+      .toLocaleString('en');
+    x[i].innerHTML = num;
+    x[i].classList.add("currSign");
+  }
+</script>
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Flot -->
+<script src="js/plugins/flot/jquery.flot.js"></script>
+<script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="js/plugins/flot/jquery.flot.spline.js"></script>
+<script src="js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+<!-- Peity -->
+<script src="js/plugins/peity/jquery.peity.min.js"></script>
+<script src="js/demo/peity-demo.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- GITTER -->
+<script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+<!-- Sparkline -->
+<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+<!-- Sparkline demo data  -->
+<script src="js/demo/sparkline-demo.js"></script>
+
+<!-- ChartJS-->
+<script src="js/plugins/chartJs/Chart.min.js"></script>
+
+<!-- Toastr -->
+<script src="js/plugins/toastr/toastr.min.js"></script>
+
+
+
+</body>
+
 </html>
